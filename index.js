@@ -19,10 +19,10 @@ function createPost() {
 
 function postComment() {
   var commentTemplate = _.template(document.getElementById("comment-template").innerHTML);
+
   var commentText = document.getElementById("commentText").value;
   var commenterName = document.getElementById("commenter").value;
+
   var commentsSection = document.getElementById("comments");
-
   commentsSection.innerHTML += commentTemplate({ 'commenter': commenterName, 'comment': commentText });
-
 }
