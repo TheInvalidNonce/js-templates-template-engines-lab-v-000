@@ -7,10 +7,10 @@ function createPost() {
   var post = document.getElementById("postBody").value;
   var postAuthor = document.getElementById("postAuthor").value;
 
-  document.getElementsByTagName("main")[0].innerHTML += pageTemplate();
+  document.getElementsByTagName("main")[0].innerHTML += pageTemplateFn();
 
-  var blogSection = postTemplate({ 'title': postTitle, 'body': post, 'poster': postAuthor });
-  var commentsSection = commentsTemplate();
+  var blogSection = postTemplateFn({ 'title': postTitle, 'body': post, 'poster': postAuthor });
+  var commentsSection = commentsTemplateFn();
   var postElement = document.getElementById("post");
 
   postElement.innerHTML = blogSection;
