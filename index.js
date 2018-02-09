@@ -5,6 +5,7 @@ function createPost() {
   
   let postTitle = document.getElementById("postTitle").value;
   let postAuthor = document.getElementById("postAuthor").value;
+  let post = post = document.getElementById("postBody").value;
 }
 
 function postComment() {
