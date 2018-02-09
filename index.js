@@ -3,17 +3,18 @@ function createPost() {
   const postTemplateFn = _.template(document.getElementById("post-template").innerHTML);
   const commentsTemplateFn = _.template(document.getElementById("comments-template").innerHTML);
   
-  let postTitle = document.getElementById("postTitle").value;
-  let postAuthor = document.getElementById("postAuthor").value;
-  let post = document.getElementById("postBody").value;
-  
-  document.getElementsByTagName("main")[0].innerHTML += pageTemplateFn();
-  
-  let templateHTML = postTemplateFn({ 'title': postTitle, 'body': post, 'poster':postAuthor});
-  let postElement = document.getElementById("post");
- 
-  postElement.innerHTML = templateHTML;
-  postElement.getElementsByTagName("footer")[0].innerHTML = commentsTemplateFn();
+  var postTitle = document.getElementById("postTitle").value;
+  var post = document.getElementById("postBody").value;
+  var postAuthor = document.getElementById("postAuthor").value;
+
+  document.getElementsByTagName("main")[0].innerHTML += pageTemplate();
+
+  var blogSection = postTemplate({ 'title': postTitle, 'body': post, 'poster': postAuthor });
+  var commentsSection = commentsTemplate();
+  var postElement = document.getElementById("post");
+
+  postElement.innerHTML = blogSection;
+  postElement.getElementsByTagName("footer")[0].innerHTML = commentsSection;
 }
 
 function postComment() {
