@@ -8,6 +8,12 @@ function createPost() {
   let post = document.getElementById("postBody").value;
   
   document.getElementsByTagName("main")[0].innerHTML += pageTemplateFn();
+  
+  let templateHTML = postTemplateFn({ 'title': postTitle, 'body': post, 'poster':postAuthor});
+  let postElement = document.getElementById("post");
+ 
+  postElement.innerHTML = templateHTML;
+  postElement.getElementsByTagName("footer")[0].innerHTML = commentsTemplateFn();
 }
 
 function postComment() {
