@@ -19,12 +19,12 @@ function createPost() {
 }
 
 function postComment() {
-  const commentTemplate = _.template(document.getElementById("comment-template").innerHTML);
+  const commentTemplateFn = _.template(document.getElementById("comment-template").innerHTML);
 
   let commentText = document.getElementById("commentText").value;
   let commenterName = document.getElementById("commenter").value;
 
   let commentsSection = document.getElementById("comments");
   
-  commentsSection.innerHTML += commentTemplate({ 'commenter': commenterName, 'comment': commentText });
+  commentsSection.innerHTML += commentTemplateFn({ 'commenter': commenterName, 'comment': commentText });
 }
