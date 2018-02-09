@@ -3,7 +3,7 @@ function createPost() {
   const postTemplateFn = _.template(document.getElementById("post-template").innerHTML);
   const commentTemplateFn = _.template(document.getElementById("comment-template").innerHTML);
   
-  let postTitle = 
+  let postTitle = document.getElementById("postTitle").value;
 }
 
 function postComment() {
