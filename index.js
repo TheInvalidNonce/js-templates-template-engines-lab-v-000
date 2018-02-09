@@ -4,6 +4,7 @@ function createPost() {
   const commentTemplateFn = _.template(document.getElementById("comment-template").innerHTML);
   
   let postTitle = document.getElementById("postTitle").value;
+  let postAuthor = document.getElementById("postAuthor").value;
 }
 
 function postComment() {
